@@ -1,0 +1,5 @@
+- name: installing rabbit mq
+  hosts: rabbit mq
+  become: yes
+  tasks:
+    - name: 
