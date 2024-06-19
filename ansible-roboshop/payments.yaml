@@ -54,7 +54,7 @@
 
   - name: enable and start user
     ansible.builtin.service:
-      name: user
+      name: payment
       state: restarted
       enabled: yes
       
