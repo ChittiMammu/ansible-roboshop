@@ -29,10 +29,10 @@
         src: /tmp/catalogue.zip
         dest: /app
 
-    - name: install dependencies
+    - name: Install dependencies
       ansible.builtin.command: npm install
-        args:
-          creates: /app
+      args:
+        chdir: /app 
 
     - name: copy catalogue.service
       ansible.builtin.copy:
