@@ -39,8 +39,8 @@
 
   - name: Install dependencies
     ansible.builtin.command: 
-    cmd: pip3.6 install -r requirements.txt
-    chdir: /app
+      cmd: pip3.6 install -r requirements.txt
+      chdir: /app
 
   - name: copy payment service
     ansible.builtin.copy:
@@ -49,8 +49,8 @@
 
   - name: daemon reload
     ansible.builtin.systemd_service:
-      state: started
-      name: daemon
+      daemon_reload: true
+
 
   - name: enable and start user
     ansible.builtin.service:
