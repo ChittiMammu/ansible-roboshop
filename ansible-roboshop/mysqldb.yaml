@@ -19,7 +19,7 @@
       ansible.builtin.service:
         name: mysql
         state: started
-        enable: yes
+        enabled: yes
 
     - name: default password for root
       ansible.builtin.command: mysql_secure_installation --set-root-pass RoboShop@1
