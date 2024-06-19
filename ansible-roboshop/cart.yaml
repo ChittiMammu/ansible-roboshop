@@ -2,7 +2,6 @@
   host: cart
   become: yes
   tasks:
-
   - name: disable old nodejs and enable new nodejs
     ansible.builtin.shell: dnf module disable nodejs -y ; dnf module enable nodejs:18 -y
 
