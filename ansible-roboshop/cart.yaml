@@ -1,5 +1,5 @@
 - name: creating cart
-  host: cart
+  hosts: cart
   become: yes
   tasks:
   - name: disable old nodejs and enable new nodejs
