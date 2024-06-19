@@ -63,8 +63,8 @@
         state: present
 
     - name: get the catageories count 
-      ansible.builtin.shell: mongo --host mongodb.malluru.online --quiet --eval 'db = db.getSiblingDB("user"); db.user.count()'
-        register: user_count 
+      ansible.builtin.command: mongo --host mongodb.malluru.online --quiet --eval 'db = db.getSiblingDB("user"); db.user.count()'
+      register: user_count 
 
 
   # - name: print the count 
