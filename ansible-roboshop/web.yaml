@@ -6,7 +6,7 @@
       ansible.builtin.dnf:
         name: nginx
         state: present
-    - name: enable and atart nginx
+    - name: enable and start nginx
       ansible.builtin.service:
         name: nginx
         enable: yes
@@ -37,7 +37,7 @@
         src: roboshop.conf 
         dest: /etc/nginx/default.d/roboshop.conf 
   
-    - name:  restart nginx 
+    - name: restart nginx 
       ansible.builtin.service:
         name: nginx
         state: restarted
