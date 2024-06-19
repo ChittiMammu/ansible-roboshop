@@ -52,7 +52,7 @@
     ansible.builtin.systemd_service:
       daemon_reload: true
 
-    - name: enable and start shipping
+  - name: enable and start shipping
     ansible.builtin.service:
       state: restarted
       enabled: yes
