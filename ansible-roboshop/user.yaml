@@ -63,7 +63,7 @@
         state: present
 
     - name: get the catageories count 
-      ansible.builtin.command: mongo --host mongodb.bigmatrix.in --quiet --eval 'db = db.getSiblingDB("user"); db.user.count()'
+      ansible.builtin.command: mongo --host mongodb.malluru.online --quiet --eval 'db = db.getSiblingDB("user"); db.user.count()'
         register: user_count 
 
 
@@ -72,7 +72,7 @@
   #     msg: "product count : {{product_count}}"
 
     - name: load cataloge data 
-      ansible.builtin.command: mongo --host mongodb.bigmatrix.in < /app/schema/user.js
+      ansible.builtin.command: mongo --host mongodb.malluru.online < /app/schema/user.js
       when: user_count.stdout == "0"
 
     - name: enable and start user
