@@ -59,9 +59,9 @@
       enabled: yes
       
 
-  - name: install mysql server 
-    ansible.builtin.package:
-      name: mysql-community-server
+  - name: install mysql client
+    ansible.builtin.dnf:
+      name: mysql
       state: present
 
   - name: loading schema
