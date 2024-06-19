@@ -73,6 +73,7 @@
     - name: load cataloge data 
       ansible.builtin.command: mongo --host mongodb.malluru.online < /app/schema/user.js
       when: user_count.stdout == "0"
+      ignore_errors: true
 
     - name: enable and start user
       ansible.builtin.service:
