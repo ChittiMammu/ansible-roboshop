@@ -3,12 +3,12 @@
   become: yes
   tasks:
     - name: creating rabbitmq repo
-      ansible.builtin.command: curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash
+      ansible.builtin.shell: curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash
 
     - name: Configure Repos for Rabbitmq
-      ansible.builtin.command: curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash
+      ansible.builtin.shell: curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash
 
-    - name: install rabbitemq
+    - name: install rabbitmq
       ansible.builtin.dnf:
         name: rabbitemq-server
         state: present
