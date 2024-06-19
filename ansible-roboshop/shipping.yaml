@@ -65,7 +65,7 @@
       state: present
 
   - name: loading schema
-    ansible.builtin.shell: mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -pRoboShop@1 < /app/schema/shipping.sql 
+    ansible.builtin.shell: mysql -h mysql.malluru.online -uroot -pRoboShop@1 < /app/schema/shipping.sql 
     args:
       chdir: /app
 
