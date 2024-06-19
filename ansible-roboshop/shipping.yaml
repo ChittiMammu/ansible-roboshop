@@ -54,13 +54,14 @@
 
   - name: enable and start shipping
     ansible.builtin.service:
+      name: user
       state: restarted
       enabled: yes
-      name: user
+      
 
-  - name: installing mysql
-    ansible.builtin.dnf:
-      name: mysql
+  - name: install mysql server 
+    ansible.builtin.package:
+      name: mysql-community-server
       state: present
 
   - name: loading schema
